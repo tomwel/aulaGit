@@ -1,0 +1,17 @@
+<div class="list-group" id="{{ accordionParent }}">
+    <a class="list-group-item list-group-item-action flex-column align-items-start" 
+       data-toggle="collapse" 
+       data-target="#collapse{{ $index }}" 
+       aria-expanded="false" 
+       aria-controls="collapse {{ $index }}"
+       ng-repeat="acc in accordions">
+        <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{ acc.titulo }}</h5>
+        <small>{{ acc.data }}</small>
+        </div>
+        <div id="collapse{{ $index }}" class="collapse" data-parent="{{ accordionParent | filterid }}">
+            <p class="mb-1">{{ acc.conteudo }}</p>
+            <!-- <small>Donec id elit non mi porta.</small> -->
+        </div>
+    </a>
+</div>
